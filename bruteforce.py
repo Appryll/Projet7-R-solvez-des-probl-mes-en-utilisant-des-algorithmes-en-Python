@@ -14,7 +14,7 @@ df_actions = pd.read_csv('tables/liste des actions.csv')
 df_actions_prix = (df_actions['price'])
 df_actions_nom = df_actions['name']
 
-# calculer profit
+# calculer profit -> Trier par profit (euro)
 profit_actions = df_actions['price'] * df_actions['profit'] / 100
 # print(profit_actions)
 
@@ -74,7 +74,7 @@ prix_optimale = sum(liste_optimale_prix)
 console = Console()
 
 console.print("Liste suggérée avec les actions les plus rentables:" + "\n",
-              ','.join(map(str, liste_optimale_nom)), "\n" + "qui vous laissent un bénéfice maximum de:",
+              ','.join(map(str, liste_optimale_nom)), "\n" + "qui vous laissent un profit maximum de:",
               round(profit_max, 2), "euros pour un coût de:", prix_optimale, "euros", style="magenta")
 
 elapsed_time = time.time() - start_time
